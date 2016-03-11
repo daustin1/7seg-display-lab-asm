@@ -1,0 +1,27 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.57</VERSION>
+ <DEVICE>"ATmega328P"</DEVICE>
+ <WORKING_DIR>U:\Atmel Studio\6.2\PowerTest\PowerTest\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>U:\Atmel Studio\6.2\PowerTest\PowerTest\PowerTest.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\m328Pdef.inc</FILE>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR Assembler\Native\2.1.1175\avrassembler\Include\M328PDEF.INC</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>U:\Atmel Studio\6.2\PowerTest\PowerTest\Debug/PowerTest.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>PowerTest.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>PowerTest.map</FILE>
+  <FILE>PowerTest.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <end><FILE>U:\Atmel Studio\6.2\PowerTest\PowerTest\PowerTest.asm</FILE><LINE>23</LINE></end>
+ </LABELS>
+</ASSEMBLER_INFO>
