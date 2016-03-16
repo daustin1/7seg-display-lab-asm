@@ -1,0 +1,44 @@
+/*
+ * _7segment.asm
+ *
+ *  Created: 3/16/2016 3:01:29 PM
+ *   Author: brent
+ */ 
+
+
+ /*
+ * PowerTest.asm
+ *
+ *  Created: 3/8/2016 5:37:10 PM
+ *   Author: brubell
+ */ 
+.ORG 0x00020
+SEG_TABLE: ; table for 7-seg-decode
+	.DB 00111111, 00000110,	01010011,01001111,01100110,	01101101,01111101, 00000111,01111111,01100111,01110111,01111110,00111001,01011110,	01111001,01110001
+
+
+.include "M328PDEF.INC" 
+;initial setup
+.ORG 0x000
+LDI R16, $02
+LDI R17, $03
+OUT DDRB, R16
+OUT PORTB, R16
+OUT PORTB, R17
+
+LDI R19,4 ; 4 values to grab and display on 7-seg, DECREMENTER
+LDI R20,0xFF ; load r20 	
+LDI R21, 0x4F ; load value #1 in
+ANDI R21, 0xFF ; mask upper bits
+LDI ZH,HIGH(SEG_TABLE<<1)	;	zh = high byte
+LDI ZL,LOW(SEG_TABLE<<1)	;	zl = low byte
+ADD ZL, R21 ; add value #1 to zl
+LPM R20,Z	; get next byte into r20			
+OUT DDRD, R20	; output to data reg
+OUT PORTD, R20	; output to data reg
+INC ZL	;	point zl to next byte in lookup table	
+DEC R19		;	decrease counter
+	;BRNE L1	;	counter not zero
+;end: rjmp end	
+
+
