@@ -38,12 +38,12 @@
 .dseg
 .org SRAM_START
 NUM2DISPLAY: .byte 2
-
+.cseg
 
 .ORG 0x200
 SEG_TABLE: ; table for 7-seg-decode
 	.DB 00111111, 00000110,	01010011,01001111,01100110,	01101101,01111101, 00000111,01111111,01100111,01110111,01111110,00111001,01011110,	01111001,01110001
-.cseg
+
 
 ;initial setup
 .ORG 0x000
@@ -61,7 +61,7 @@ ANDI R22, $0F ; R22 = UPPER DIGIT
 LDI XH,HIGH(SEG_TABLE<<1)	;	xh = high byte
 LDI XL,LOW(SEG_TABLE<<1)	;	xl = low byte
 ADD XL, R21 ; add value #1 to zl
-
+ADD XH, R22
 LPM R20,X	; get next byte into r20			
 OUT DDRD, R20	; output to data reg
 OUT PORTD, R20	; output to data reg
